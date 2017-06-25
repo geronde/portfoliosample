@@ -1,0 +1,349 @@
+/* General rules */
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6 & 7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+body {
+    font-family: georgia, serif;
+    font-size: 1em;
+    background-color: #eee;
+}
+
+
+/* ~~Mobile-first design ~~*/
+
+
+/*Menu*/
+
+.menu {
+    width: 100%;
+    background-color: #6E729D;
+    font-family: georgia, serif;
+    font-size: 1em;
+    display: inline-block;
+    position: relative;
+    padding: 20px 10px;
+    z-index: 8;
+}
+
+.menu ul.active {
+    display: none;
+}
+
+.menu ul {
+    width: 100%;
+    position: absolute;
+    padding: 10px 20px;
+    top: 72px;
+    left: 0;
+    background-color: #97A1FF;
+    border-radius: 5px;
+}
+
+.menu ul:after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    content: '';
+    left: 15px;
+    transform: translate(0%, -100%);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #97A1FF;
+}
+
+.menu li {
+    padding: 10px;
+    display: block;
+}
+
+.menu ul li a {
+    display: block;
+    text-align: center;
+    transform: color linear 0.15s;
+    color: #1320A9;
+}
+
+.menu li a:hover {
+    opacity: 0.5;
+}
+
+.toggle-menu {
+    display: inline-block;
+    font-size: 2em;
+    border-radius: 3px;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    transition: color linear 0.15s;
+}
+
+.toggle-menu:hover,
+.toggle-menu.active {
+    text-decoration: none;
+    color: #3D25EE;
+}
+
+.logo {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 10;
+    width: 100px;
+}
+
+
+/*-- main content--*/
+
+.main {
+    background: url('https://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_dh8LV2F.jpg') 30% 50% no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+
+.about_me {
+    margin: 10px;
+    padding: 10px;
+}
+
+.About_me h2 {
+    font-family: 'ABeeZee', sans-serif;
+    color: #3D25EE;
+    text-shadow: 1px 0px #eee;
+    padding: 20px 20px 0px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.About_me p {
+    padding: 20px 20px 0;
+    font-size: 1.2em;
+}
+
+.About_me a {
+    position: absolute;
+    background-color: #6266FC;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 1px #ABABFF;
+    text-align: center;
+    font-family: 'ABeeZee', sans-serif;
+    color: #eee;
+    font-weight: bold;
+    margin-right: 15px;
+    bottom: 0;
+    right: 0;
+}
+
+.About_me a:hover {
+    background-color: #4B53FE;
+    color: #000;
+}
+
+
+/*Showcase the portfolio*/
+.my_work {
+    margin:0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pod {
+    width: 100%;
+    margin:0 2% 0 2%;
+    }
+.pod:last-child {
+    padding-bottom:200px;
+}
+
+.pod h2 {
+    font-family: 'ABeeZee',sans-serif;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+}
+
+.pod img {
+    display: block;
+    max-width: 100%;
+    vertical-align: bottom;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 -2px 3px rgba(0, 0, 0, .5);
+
+}
+
+
+
+/*Footer*/
+
+/*sticky footer*/
+html, body {
+  height: 100%;
+ 
+}
+.wrap {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -150px;
+}
+footer {
+    height: 150px;
+    text-align: center;
+    position: relative;
+    
+}
+.contact {
+    background-color: lightblue;
+}
+
+.contact h2 {
+    font-family: 'ABeeZee', sans-serif;
+    color:blue;
+    font-size: 1.2em;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact p {
+    padding: 5px 10px 5px 10px;
+}
+
+.social {
+    display: inline-block;
+    position: relative;
+    padding: 20px 0 20px 0;
+
+}
+
+.social img {
+    width: 50px;
+}
+
+.social a:hover {
+    opacity: 0.4;
+}
+.copyright {
+    background-color: #434343;
+    color:#eee;
+    height: 30px;
+}
+
+
+/*Responsive design*/
+@media all and (min-width: 640px) and (max-width: 960px) {
+    .About_me a {
+        padding: 25px;
+
+    }
+    .my_work .pod h2 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+
+    }
+.my_work {
+    align-items: flex-end;
+}
+    .pod {
+        width: 45%;
+    }
+
+  .contact h2 {
+    font-size: 1.5em;
+  }
+  .contact p { font-size: 1.2em; }
+  .social img { width:55px; }
+
+}
+
+@media all and (min-width: 960px){
+    /*Menu*/
+
+.toggle-menu {display: none;}
+
+.menu ul.active {
+display: inline-block;
+}
+
+.menu ul {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    top:12px;
+    padding: 10px;
+}
+
+.menu ul:after {
+    content: '';
+    display: none;
+    }
+
+.menu li {
+    display: inline;
+    padding-left: 15px;
+}
+
+.menu li:last-child{
+    margin-right: 5px;
+}
+.menu ul li a {
+    display: inline;
+    transform: color linear 0.15s;
+    color: #eee;
+    font-size: 1.3em;
+}
+.About_me h2 {
+    font-size: 3em;
+    padding-top:30px;
+}
+.About_me p {
+margin:20px 0;
+}
+.About_me a {
+        padding: 25px;
+        font-size: 1.2em;
+
+    }
+    .my_work .pod h2 {
+        visibility: hidden;
+        padding: 0;
+
+    }
+    .my_work {
+       width: 80%;
+       margin: 0 auto;
+    }
+
+    .pod {
+        margin:0;
+        width:33%;
+        padding-left: 0.5%;
+    }
+   
+   
+      .contact h2 {
+    font-size: 2em;
+  }
+  .contact p { font-size: 1.5em; }
+  .social img { width:60px; }
+  .copyright { font-size: 0.75em;}
+
+
+}
+
